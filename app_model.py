@@ -22,7 +22,7 @@ def git_update():
 
 @app.route('/',methods=['GET'])
 def hello():
-    return "Mi primera API Flask CUTRE con github"
+    return "Mi primera API Flask CUTRE con github 22"
 
 @app.route('/api/v1/predict', methods=['GET'])
 def predict():
