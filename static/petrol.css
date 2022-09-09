@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+}
+
+#header {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background: #1972e6;
+	padding: 0.5rem;
+}
+
+#headerForm {
+	width: 100%;
+	max-width: 1700px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	font-size: 1.2rem;
+}
+
+#headerForm input {
+	padding: 0.5rem;
+	margin: 5px;
+	background: #ffcc00;
+	border: 0px;
+	border-radius: 5%;
+}
+
+#main {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+#main * {
+	padding: 15px;
+}
+
+#gmap_canvas {
+	max-width: 600px;
+	max-height: 500px;
+}
+
+@media only screen and (max-width: 320px) {
+	#gmap_canvas {
+		width: 100%;
+	}
+}

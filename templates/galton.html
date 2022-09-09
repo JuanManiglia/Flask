@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glaton Board</title>
+</head>
+<body>
+    <h1>Galton board</h1>
+    <form method="POST">
+        <label for="number">How many lanes do you want?</label><br><br>
+        <input type="text" name="number">
+        <input type="submit">
+    </form>
+    {% if URL!="" %}
+    <p>{{ structure }}</p>
+    <img src="{{URL}}" alt="">
+    {% endif %}
+</body>
+</html>

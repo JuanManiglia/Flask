@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{{url_for('static',filename='petrol.css') }}">
+		<title>Precio petróleo</title>
+	</head>
+	<body>
+		<div id="header">
+			<form id="headerForm">
+				<div>
+					<label for="provincia">Provincia</label>
+					<select name="provincia" id="ComunidadAutonoma">
+						{% for i in pyload["provinceList"] %} 
+							{% if i == pyload["province"]%}
+								<option value="{{i}}" selected>{{i}}</option>
+							{% else %}
+								<option value="{{i}}">{{i}}</option>
+							{% endif %}
+						{% endfor %}
+					</select>
+				</div>
+				<div>
+					<label for="combustible">Combustible</label>
+					<select name="combustible" id="">
+						{% for j in pyload["fuelList"]%}
+							{% if j == pyload["fuel"]%}
+								<option value="{{j}}" selected>{{j}}</option>
+							{% else %}
+								<option value="{{j}}">{{j}}</option>
+							{% endif %}
+						{% endfor %}
+					</select>
+				</div>
+				<input type="submit" value="Submit" />
+			</form>
+		</div>
+		<div id="main">
+			{% if pyload["province"]!="" and pyload["combustible"] != "" %}
+				{% if pyload["petrolPrice"] == None %}
+					<h2>Esta provincia no tiene este tipo de combustible.</h2>
+				{% elif pyload["petrolPrice"] != None %}
+					<h2>Precio más barato en {{pyload["province"].lower.title()}} de {{pyload["fuel"].replace("Precio ","")}} es de {{pyload["petrolPrice"]}}€/l</h2><br>
+					<p>Dirección: {{pyload["direccion"]}}</p>
+				
+					<!-- Code copied form: https://www.embedgooglemap.net/ -->
+					<iframe width="600" height="500" id="gmap_canvas"
+					src="https://maps.google.com/maps?q={{pyload["direccion"]}},%2026&t=&z=13&ie=UTF8&iwloc=&output=embed"
+					frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+					></iframe>
+					<!-- End copied code -->
+				{% endif %}
+			{% endif %}
+		</div>
+	</body>
+</html>

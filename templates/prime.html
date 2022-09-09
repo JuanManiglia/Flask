@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/imgs/favicon.ico">
+    <title>Prime Numbers</title>
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <form action="" method="POST">
+        <label for="number">Up to what number?</label><br><br>
+        <input name="number" id="number" type="text">
+        <input type="submit">
+    </form>
+    <ul>
+        {% for value in list %}
+        <li>{{ value }}</li>
+        {% endfor %}
+        <ul>
+</body>
+
+</html>

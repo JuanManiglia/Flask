@@ -1,10 +1,13 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask.wrappers import Response
 import os
 import pandas as pd
 import numpy as np
 import pickle
 import git
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import Lasso
+from sklearn.metrics import mean_squared_error
 
 app = Flask(__name__)
 
@@ -21,8 +24,9 @@ def git_update():
 
 
 @app.route('/',methods=['GET'])
-def hello():
-    return "Mi primera API Flask CUTRE con github sin refrescar"
+def index():
+    print(os.getcwd())
+    return render_template("index.html")
 
 @app.route('/api/v1/predict', methods=['GET'])
 def predict():
