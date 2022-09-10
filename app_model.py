@@ -17,7 +17,7 @@ def git_update():
 
 @app.route('/',methods=['GET'])
 def hello():
-    return "Mi primera API Flask CUTRE act desde github.."
+    return "Mi primera API Flask CUTRE act desde github hola"
 
 
 
