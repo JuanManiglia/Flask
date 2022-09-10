@@ -14,10 +14,10 @@ def git_update():
                      origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
     origin.pull()
     return '', 200
-    
+
 @app.route('/',methods=['GET'])
 def hello():
-    return "Mi primera API Flask CUTRE act desde github hola"
+    return "Mi primera API Flask CUTRE pero actualiza desde visual"
 
 
 
