@@ -10,7 +10,7 @@ app.config['DEBUG'] = True
 
 @app.route('/',methods=['GET'])
 def hello():
-    return "Mi primera API Flask CUTRE"
+    return "Mi primera API Flask CUTRE act"
 
 
 
