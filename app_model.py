@@ -17,7 +17,7 @@ def git_update():
 
 @app.route('/',methods=['GET'])
 def hello():
-    return "Mi primera API Flask CUTRE pero actualiza desde visual"
+    return "Mi primera API Flask CUTRE pero actualiza desde visual y sin apretar el boton"
 
 
 
