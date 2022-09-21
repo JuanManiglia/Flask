@@ -48,7 +48,7 @@ def predict():
         #file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         datos = pd.read_csv(file)
         tamano = len(datos)
-        model = pickle.load(open('model_selected.pkl', 'rb'))
+        model = pickle.load(open('ad_model.pkl', 'rb'))
         prediction = model.predict(datos)
         
         if tamano>1:
