@@ -3,7 +3,6 @@ import os
 import git
 import pickle
 import pandas as pd
-from sales_form import SalesForm
 from random import randint
 
 app = Flask(__name__)
