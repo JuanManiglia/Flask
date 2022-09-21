@@ -156,3 +156,4 @@ cython_debug/
 *.zip
 orbe/
 .vscode/
+template.zip
