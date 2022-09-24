@@ -53,7 +53,7 @@ def predict():
         datos = pd.read_csv(file, index_col=0)
         prueba = datos.iloc[val-1:val,:-1]
         tamano = len(prueba)
-        model = pickle.load(open('ad_model.pkl', 'rb'))
+        model = pickle.load(open('/home/jmaniglia/Flask/ad_model.pkl', 'rb'))
         prediction = model.predict(prueba)
         
         # if tamano>1:
